@@ -1,15 +1,24 @@
-function add_item() {
-  let item = document.getElementById("box");
-  let list_item = document.getElementById("list_item");
-  if (item.value != "") {
-    let make_li = document.createElement("LI");
-    make_li.appendChild(document.createTextNode(item.value));
-    list_item.appendChild(make_li);
-    item.value = "";
-    make_li.onclick = function () {
-      this.parentNode.removeChild(this);
-    };
-  } else {
-    alert("добавьте задачу!");
-  }
-}
+document.querySelector("#generate").addEventListener("click", () => {
+  generate();
+});
+
+generate = () => {
+  var quotes = {
+    "- Михаил Лермонтов":
+      '"… И целый мир возненавидел,Чтобы тебя любить сильней."',
+    "- Сергей Есенин":
+      '"Времени нет. Серьезно? Это желания нет, а время есть всегда."',
+    "- Максим Горький": '"В жизни всегда есть место подвигам. "',
+    "- Александр Пушкин":
+      '"Все женщины прелестны, а красоту им придает любовь мужчин."',
+  };
+
+  var authors = Object.keys(quotes);
+
+  var author = authors[Math.floor(Math.random() * authors.length)];
+
+  var quote = quotes[author];
+
+  document.querySelector("#quote").textContent = quote;
+  document.querySelector("#author").textContent = author;
+};

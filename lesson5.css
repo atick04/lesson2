@@ -1,35 +1,73 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: cursive;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+
 body {
-  background: #f2f2f2;
-  overflow: auto;
+  background: #06bdc1;
+  background: -webkit-radial-gradient(center, #06bdc1, #68469f);
+  background: -moz-radial-gradient(center, #06bdc1, #68469f);
+  background: radial-gradient(ellipse at center, #06bdc1, #68469f);
 }
-h1 {
-  text-align: center;
-  margin: 5%;
-  font-size: 3 rem;
-  text-decoration: underline;
+
+.container {
+  width: 1280px;
+  margin: auto;
 }
-ul {
-  text-align: left;
-  padding-left: 10%;
-  padding: 7%;
-  font-size: 2 rem;
-  list-style: circle;
-}
-li:hover {
-  color: red;
-  margin: 4%;
-  transition: 1.5 s ease;
-  cursor: pointer;
-}
-.row {
+
+.quotes-container {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  height: 100vh;
 }
-.form-group {
+
+.inner-quotes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 900px;
   text-align: center;
+  min-height: 400px;
+  padding: 0 25px;
+  color: gray;
+  border-radius: 10px;
+  background-color: #f4edea;
+  border: 10px solid #06bdc1;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.9);
+}
+
+.inner-quotes-container p {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.inner-quotes-container h3 {
+  font-size: 2rem;
+  color: black;
+  font-family: "Dancing Script", cursive;
+}
+
+.quote-btn {
+  padding-top: 25px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 900px) {
+  .inner-quotes-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner-quotes-container p {
+    font-size: 1.2rem;
+  }
+  .inner-quotes-container h3 {
+    font-size: 1.5rem;
+  }
 }
